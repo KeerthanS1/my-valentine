@@ -167,12 +167,14 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
               >
-                <h2 className="yay-title">Yay! 🎉💖</h2>
+                <h2 className="yay-title">Yay! 🎉</h2>
+                <h3 className="yay-title">I love you!💖</h3>
                 <p className="cute-message">
                   Get ready to explore Mysore in our traditional outfits!
                   <br />
                   It will be a great day filled with love and memories! 💕
                 </p>
+
                 <motion.div
                   className="hearts-floating"
                   animate={{ y: [0, -20, 0] }}
