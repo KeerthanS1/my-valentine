@@ -1,0 +1,401 @@
+/* Main Container */
+.valentine-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd4ea 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.valentine-container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(circle, rgba(255, 182, 193, 0.3) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 192, 203, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position:
+    0 0,
+    25px 25px;
+  animation: floatPattern 20s linear infinite;
+}
+
+@keyframes floatPattern {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Question Section */
+.question-section {
+  text-align: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3rem 2.5rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.heart-icon {
+  width: 80px;
+  height: 80px;
+  color: #ff69b4;
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.4));
+}
+
+.question-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #d946b5;
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(217, 70, 181, 0.2);
+  line-height: 1.2;
+}
+
+/* Buttons Container */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Yes Button */
+.yes-button {
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.yes-button:hover {
+  box-shadow: 0 12px 30px rgba(255, 20, 147, 0.5);
+}
+
+/* No Button */
+.no-button {
+  background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 450px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.no-button:hover {
+  background: linear-gradient(135deg, #d0d0d0 0%, #e5e5e5 100%);
+  border-color: #ccc;
+}
+
+/* Hint Text */
+.hint-text {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ff1493;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Accepted Section */
+.accepted-section {
+  text-align: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Teddy Bears Container */
+.teddy-bears {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.teddy-bear {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Bear Head */
+.bear-head {
+  width: 80px;
+  height: 80px;
+  background: #d4a574;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+/* Ears */
+.ear {
+  width: 35px;
+  height: 35px;
+  background: #d4a574;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ear::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #f5d5a8;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.ear-left {
+  left: -15px;
+}
+
+.ear-right {
+  right: -15px;
+}
+
+/* Face */
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Eyes */
+.eye {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 28px;
+}
+
+.eye-left {
+  left: 22px;
+}
+
+.eye-right {
+  right: 22px;
+}
+
+/* Nose */
+.nose {
+  width: 12px;
+  height: 10px;
+  background: #8b4513;
+  border-radius: 50%;
+  position: absolute;
+  top: 42px;
+}
+
+/* Mouth */
+.mouth {
+  width: 20px;
+  height: 10px;
+  border: 2px solid #8b4513;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 50px;
+}
+
+/* Bear Body */
+.bear-body {
+  width: 90px;
+  height: 100px;
+  background: #d4a574;
+  border-radius: 45px 45px 60px 60px;
+  position: relative;
+  margin-top: -15px;
+  box-shadow: inset 0 -15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.bear-body::after {
+  content: "";
+  width: 50px;
+  height: 60px;
+  background: #f5d5a8;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Arms */
+.arm {
+  width: 25px;
+  height: 60px;
+  background: #d4a574;
+  border-radius: 25px;
+  position: absolute;
+  top: 15px;
+}
+
+.bear-left .arm-left {
+  left: -18px;
+  transform: rotate(-30deg);
+  animation: hugLeft 2s ease-in-out infinite;
+}
+
+.bear-left .arm-right {
+  right: -5px;
+  transform: rotate(45deg);
+  animation: hugRight 2s ease-in-out infinite;
+}
+
+.bear-right .arm-left {
+  left: -5px;
+  transform: rotate(-45deg);
+  animation: hugRight 2s ease-in-out infinite;
+}
+
+.bear-right .arm-right {
+  right: -18px;
+  transform: rotate(30deg);
+  animation: hugLeft 2s ease-in-out infinite;
+}
+
+@keyframes hugLeft {
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes hugRight {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+}
+
+/* Heart on Bear */
+.heart-on-bear {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  z-index: 5;
+}
+
+/* Message Container */
+.message-container {
+  margin-top: 2rem;
+}
+
+.yay-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ff1493;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+}
+
+.cute-message {
+  font-size: 1.3rem;
+  color: #d946b5;
+  line-height: 1.8;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hearts-floating {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .question-title {
+    font-size: 2rem;
+  }
+
+  .yes-button {
+    font-size: 1.3rem;
+    padding: 0.9rem 2.5rem;
+  }
+
+  .no-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .yay-title {
+    font-size: 2.2rem;
+  }
+
+  .cute-message {
+    font-size: 1.1rem;
+  }
+
+  .bear-head {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bear-body {
+    width: 70px;
+    height: 80px;
+  }
+
+  .ear {
+    width: 28px;
+    height: 28px;
+  }
+
+  .heart-on-bear {
+    font-size: 1.2rem;
+  }
+}
